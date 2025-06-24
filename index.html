@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasas Banuka - Software Engineering & Network Technology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #1e293b; /* Slate 800 */
+        }
+        .section-title {
+            @apply text-3xl font-bold text-slate-800 mb-8 text-center;
+        }
+        .nav-link {
+            @apply px-4 py-2 rounded-md text-slate-600 hover:bg-slate-200 hover:text-slate-900 transition-all duration-300 relative;
+        }
+        /* Style for the active navigation link */
+        .nav-link.active {
+            @apply text-blue-600 font-semibold;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 2px;
+            background-color: #2563eb; /* blue-600 */
+            border-radius: 1px;
+        }
+
+        .card {
+             @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl;
+        }
+        .tag {
+            @apply inline-block bg-blue-100 text-blue-800 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full;
+        }
+
+        /* Animation Styles */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-slate-900">Yasas Banuka</a>
+            <div id="desktop-nav" class="hidden md:flex space-x-2">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#volunteering" class="nav-link">Volunteering</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-slate-600 hover:bg-slate-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="#about" class="block py-2 nav-link text-center">About</a>
+             <a href="#experience" class="block py-2 nav-link text-center">Experience</a>
+             <a href="#projects" class="block py-2 nav-link text-center">Projects</a>
+             <a href="#volunteering" class="block py-2 nav-link text-center">Volunteering</a>
+             <a href="#skills" class="block py-2 nav-link text-center">Skills</a>
+             <a href="#contact" class="block py-2 nav-link text-center">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section id="hero" class="py-20 fade-in-section">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-4 leading-tight">
+                        Building the Future with Code
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto md:mx-0 mb-6">
+                        Co-Founder of WebDynamo | Postman Student Expert | Software Engineering & Network Technology Undergraduate
+                    </p>
+                     <p class="text-lg text-slate-500 max-w-xl mx-auto md:mx-0 mb-8">
+                        Passionate about DevOps, Cloud Computing, and crafting innovative solutions that make an impact.
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#contact" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-md hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Get In Touch
+                        </a>
+                        <a href="https://www.linkedin.com/in/yasasbanuka" target="_blank" class="bg-white text-slate-700 font-semibold px-8 py-3 rounded-md hover:bg-slate-100 transition-all duration-300 border border-slate-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2">
+                            <i data-lucide="linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <img src="photo.jpg" alt="Yasas Banuka" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-white transform hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 fade-in-section">
+             <h2 class="section-title">About Me</h2>
+             <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                 <p class="text-slate-600 text-lg leading-relaxed">
+                    I'm a passionate IT student fueled by a desire to learn and contribute to the tech landscape. Currently pursuing dual degrees in Software Engineering and Network Technology, I'm actively involved in open-source projects and constantly seeking opportunities to expand my knowledge and collaborate with talented individuals. My journey has taken me from graphic design to full-stack web development and now into the exciting realms of DevOps and cloud infrastructure. I thrive on solving complex problems and building practical, user-friendly solutions.
+                 </p>
+             </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 fade-in-section">
+            <h2 class="section-title">Experience</h2>
+            <div class="max-w-4xl mx-auto space-y-8 relative">
+                 <!-- Timeline line -->
+                <div class="absolute left-3 sm:left-1/2 top-0 h-full w-0.5 bg-slate-300"></div>
+                
+                <div class="relative fade-in-section">
+                    <div class="absolute left-3 sm:left-1/2 top-1 -ml-1.5 h-3 w-3 rounded-full bg-blue-500"></div>
+                    <div class="sm:flex sm:items-center sm:space-x-8">
+                        <div class="sm:w-1/2 sm:text-right">
+                           <p class="text-sm text-slate-500">Aug 2024 - Present</p>
+                        </div>
+                        <div class="mt-4 sm:mt-0 sm:w-1/2 card">
+                            <h3 class="text-xl font-bold">Co-Founder</h3>
+                            <p class="text-md font-semibold text-slate-600 mb-2">WebDynamo (Australia)</p>
+                            <p class="text-slate-600">Dedicated to propelling SMEs forward in the digital landscape with expert web design & strategic digital marketing solutions to drive traffic and boost conversions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative fade-in-section">
+                     <div class="absolute left-3 sm:left-1/2 top-1 -ml-1.5 h-3 w-3 rounded-full bg-blue-500"></div>
+                    <div class="sm:flex sm:flex-row-reverse sm:items-center sm:space-x-8 sm:space-x-reverse">
+                        <div class="sm:w-1/2 sm:text-left">
+                            <p class="text-sm text-slate-500">Jul 2023 - Apr 2024</p>
+                        </div>
+                        <div class="mt-4 sm:mt-0 sm:w-1/2 card">
+                            <h3 class="text-xl font-bold">Web Developer</h3>
+                            <p class="text-md font-semibold text-slate-600 mb-2">Western Digital Computer Systems & Electronics (PVT) LTD.</p>
+                            <p class="text-slate-600">Led development and maintenance of three company websites, ensuring seamless user experience. Spearheaded social media strategy and ad campaigns.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative fade-in-section">
+                    <div class="absolute left-3 sm:left-1/2 top-1 -ml-1.5 h-3 w-3 rounded-full bg-blue-500"></div>
+                    <div class="sm:flex sm:items-center sm:space-x-8">
+                        <div class="sm:w-1/2 sm:text-right">
+                            <p class="text-sm text-slate-500">Sep 2021 - Jun 2023</p>
+                        </div>
+                        <div class="mt-4 sm:mt-0 sm:w-1/2 card">
+                            <h3 class="text-xl font-bold">Web Developer</h3>
+                            <p class="text-md font-semibold text-slate-600 mb-2">Freelancer.com</p>
+                            <p class="text-slate-600">Transitioned from graphic design, fixing bugs and implementing features using HTML, CSS, & JavaScript. Grew to develop with Bootstrap, jQuery, WordPress, and React.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="relative fade-in-section">
+                     <div class="absolute left-3 sm:left-1/2 top-1 -ml-1.5 h-3 w-3 rounded-full bg-blue-500"></div>
+                    <div class="sm:flex sm:flex-row-reverse sm:items-center sm:space-x-8 sm:space-x-reverse">
+                        <div class="sm:w-1/2 sm:text-left">
+                             <p class="text-sm text-slate-500">May 2020 - Jul 2021</p>
+                        </div>
+                        <div class="mt-4 sm:mt-0 sm:w-1/2 card">
+                            <h3 class="text-xl font-bold">Graphic Designer</h3>
+                            <p class="text-md font-semibold text-slate-600 mb-2">Freelancer.com</p>
+                            <p class="text-slate-600">Started my freelance journey creating YouTube thumbnails, logos, and other graphics, building a foundation in design and client communication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 fade-in-section">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="card fade-in-section">
+                    <img src="https://placehold.co/600x400/e2e8f0/475569?text=BookAudit.lk" alt="BookAudit.lk" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-2">BookAudit.lk</h3>
+                    <p class="text-slate-600 mb-4">Sri Lanka's first short book review blog to help readers make informed decisions. Founded to bridge the gap between discovery and purchase.</p>
+                    <div>
+                        <span class="tag">Blogging</span>
+                        <span class="tag">Founder Project</span>
+                        <span class="tag">Community</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="card fade-in-section" style="transition-delay: 100ms;">
+                     <img src="https://placehold.co/600x400/e2e8f0/475569?text=WebDynamo+Solutions" alt="WebDynamo Project" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-2">SME Digital Presence</h3>
+                    <p class="text-slate-600 mb-4">Co-founded WebDynamo to provide expert web design and digital marketing for small and medium-sized enterprises, focusing on growth and conversion.</p>
+                     <div>
+                        <span class="tag">Web Design</span>
+                        <span class="tag">Digital Marketing</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Next.js</span>
+                    </div>
+                </div>
+
+                 <!-- Project Card 3 -->
+                <div class="card fade-in-section" style="transition-delay: 200ms;">
+                     <img src="https://placehold.co/600x400/e2e8f0/475569?text=Portfolio+CI/CD" alt="CI/CD Pipeline Project" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-2">Automated Portfolio Deployment</h3>
+                    <p class="text-slate-600 mb-4">This very portfolio site is deployed via an automated CI/CD pipeline using GitHub Actions, showcasing practical DevOps skills.</p>
+                     <div>
+                        <span class="tag">DevOps</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">Vercel</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteering Section -->
+        <section id="volunteering" class="py-20 fade-in-section">
+            <h2 class="section-title">Volunteering & Community</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="card text-center fade-in-section">
+                    <i data-lucide="heart-handshake" class="w-12 h-12 mx-auto text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold">IEEE Volunteer</h3>
+                    <p class="text-md font-semibold text-slate-600 mb-2">Institute of Electrical and Electronics Engineers</p>
+                    <p class="text-slate-500">Engaging with the world's largest technical professional organization to foster technological innovation and excellence for the benefit of humanity.</p>
+                </div>
+                <div class="card text-center fade-in-section" style="transition-delay: 100ms;">
+                    <i data-lucide="users" class="w-12 h-12 mx-auto text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold">LEO Volunteer</h3>
+                    <p class="text-md font-semibold text-slate-600 mb-2">Leo Clubs International</p>
+                     <p class="text-slate-500">Participating in community service projects and developing leadership skills as part of a global network of young people making a difference.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 fade-in-section">
+            <h2 class="section-title">Education</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="card fade-in-section">
+                    <h3 class="text-xl font-bold">Bachelor of Technology - BTech, Network Engineering</h3>
+                    <p class="text-md font-semibold text-slate-600 mb-2">University of Vocational Technology</p>
+                    <p class="text-slate-500">May 2024 - 2027</p>
+                </div>
+                <div class="card fade-in-section" style="transition-delay: 100ms;">
+                    <h3 class="text-xl font-bold">Bachelor of Engineering (Hons) in Software Engineering</h3>
+                    <p class="text-md font-semibold text-slate-600 mb-2">IIC University of Technology</p>
+                     <p class="text-slate-500">2022 - 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Certifications Section -->
+        <section id="skills" class="py-20 fade-in-section">
+             <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-16">
+                    <div class="fade-in-section">
+                        <h2 class="section-title !text-left !mb-6">Top Skills</h2>
+                        <div class="space-y-6">
+                           <div>
+                                <p class="font-semibold mb-2">Linux</p>
+                                <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                  <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                           </div>
+                           <div>
+                                 <p class="font-semibold mb-2">DevOps</p>
+                                 <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                  <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                           </div>
+                           <div>
+                                <p class="font-semibold mb-2">Cloud Computing</p>
+                                <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                  <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                           </div>
+                           <div>
+                                <p class="font-semibold mb-2">React & Next.js</p>
+                                <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                  <div class="bg-blue-600 h-2.5 rounded-full" style="width: 95%"></div>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                     <div class="fade-in-section" style="transition-delay: 100ms;">
+                        <h2 class="section-title !text-left !mb-6">Certifications</h2>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm hover:bg-slate-50 transition-colors">
+                                <i data-lucide="award" class="text-blue-500"></i>
+                                <span>AZ-900: Microsoft Azure Fundamentals</span>
+                            </li>
+                            <li class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm hover:bg-slate-50 transition-colors">
+                                <i data-lucide="award" class="text-blue-500"></i>
+                                <span>GenAI 101 with Pieces</span>
+                            </li>
+                             <li class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm hover:bg-slate-50 transition-colors">
+                                <i data-lucide="award" class="text-blue-500"></i>
+                                <span>Learning Linux Basics Course & Labs</span>
+                            </li>
+                             <li class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm hover:bg-slate-50 transition-colors">
+                                <i data-lucide="award" class="text-blue-500"></i>
+                                <span>Advanced React by Meta</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center fade-in-section">
+            <h2 class="section-title">Let's Connect!</h2>
+            <p class="max-w-2xl mx-auto text-lg text-slate-600 mb-8">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out.
+            </p>
+            <a href="mailto:ybanuka2003@gmail.com" class="inline-block bg-blue-600 text-white font-bold text-lg px-10 py-4 rounded-md hover:bg-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                Say Hello
+            </a>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+             <div class="flex justify-center space-x-6 mb-4">
+                 <a href="https://www.linkedin.com/in/yasasbanuka" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                 </a>
+                 <a href="https://github.com/yasasbanuka" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                 </a>
+                 <a href="mailto:ybanuka2003@gmail.com" class="text-slate-400 hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                 </a>
+             </div>
+             <p>&copy; <span id="year"></span> Yasas Banuka. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Lucide Icons ---
+        lucide.createIcons();
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Close mobile menu when a link is clicked ---
+        const allNavLinks = document.querySelectorAll('nav a');
+        allNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth < 768 && !link.href.includes('#')) {
+                     mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // --- Set current year in footer ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- Scroll Animation Logic ---
+        const animatedElements = document.querySelectorAll('.fade-in-section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: unobserve after animation to save resources
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+
+
+        // --- Active Nav Link Highlighting Logic ---
+        const sections = document.querySelectorAll('main section');
+        const navLinks = document.querySelectorAll('#desktop-nav a.nav-link');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { 
+            threshold: 0.5, // Trigger when 50% of the section is visible
+            rootMargin: "-50px 0px -50px 0px" // Adjust viewport to trigger earlier/later
+        });
+
+        sections.forEach(section => {
+            // Observe all main sections for nav highlighting
+            if(section.id) {
+                 navObserver.observe(section);
+            }
+        });
+
+    </script>
+</body>
+</html>
